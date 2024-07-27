@@ -1,0 +1,73 @@
+$primary-background-color: #383c4a;
+$primary-foreground-color: #007C41;
+$primary-border-color: #80A0C0;
+
+*{
+    all: unset;
+    font-family: "Mono Nerd Font";
+}
+
+
+._button {
+    color: $primary-border-color;
+
+    &:hover {
+        background-color: #4c566a;
+        border-color: $primary-foreground-color;
+    }
+}
+
+.layout-box{
+    background-color: $primary-background-color;
+    border: 4px solid $primary-border-color;
+}
+
+.heading{
+    font-size: 9mm;
+    color: #a3be8c;
+}
+
+.content{
+    font-size: 20px;
+    color: #8fbcbb;
+}
+
+.child_box
+{
+    border-left: 4px solid $primary-border-color;
+}
+
+
+
+calendar{
+    color: $primary-border-color;
+    background-color: $primary-background-color;
+    border: 4px solid $primary-border-color;
+    border-top: 2px;
+}
+
+
+
+.system_info circular-progress
+{
+    background-color: #434c5e;
+}
+
+.system_info .cpu
+{
+    color:  #d08770;
+}
+
+.system_info .disk
+{
+    color: #ebcb8b;
+}
+
+.system_info .ram
+{
+    color: #bf616a;
+}
+
+label{
+    color: $primary-border-color;
+}
