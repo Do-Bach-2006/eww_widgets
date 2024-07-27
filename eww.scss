@@ -4,7 +4,8 @@ $primary-border-color: #80A0C0;
 
 *{
     all: unset;
-    font-family: "Mono Nerd Font";
+    font-family: "hack";
+
 }
 
 
@@ -70,4 +71,23 @@ calendar{
 
 label{
     color: $primary-border-color;
+}
+
+.qoutes label:first-child
+{
+    color: #a3be8c;
+}
+.qoutes label:last-child
+{
+    color: #b48ead;
+}
+
+.weather label:first-child
+{
+    font-size: 18px;
+    color: #8fbcbb;
+}
+.weather label:last-child
+{
+    font-size: 18px;
 }
