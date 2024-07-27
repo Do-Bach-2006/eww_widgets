@@ -55,7 +55,7 @@ def get_leetcode_today_json() -> str:
         format_dict['link'] = result_dict["questionLink"]
         format_dict['name'] = result_dict["questionTitle"]
         format_dict['difficulty'] = result_dict["difficulty"]
-        format_dict['color'] = "green" if format_dict['difficulty'] == "Easy" else "orange" if format_dict['difficulty'] == "Medium" else "red"
+        format_dict['color'] = "green" if format_dict['difficulty'] == "#a3be8c" else "#ebcb8b" if format_dict['difficulty'] == "Medium" else "#bf616a"
         format_dict['tags'] = []
         format_dict['date'] = result_dict["date"]
 
