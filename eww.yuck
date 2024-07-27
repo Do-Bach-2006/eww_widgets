@@ -1,7 +1,7 @@
 
 ; quote widget
 (defpoll quote_and_author
-  :interval "1800s"; the qoute will auto matically update after 30 mins
+  :interval "30m"; the qoute will auto matically update after 30 mins
   'python -u ./scripts/get_quotes.py'
 )
 
@@ -15,7 +15,9 @@
       :spacing 0
       :orientation "vertical"
       (overlay
-
+        :class "qoutes"
+        :vexpand true
+        :hexpand true
         (label
           :vexpand true
           :hexpand true
@@ -48,8 +50,6 @@
   'python -u "scripts/get_weather.py" '
 )
 
-; TODO: adding the widget to get free games from epic
-; TODO: the quick translate will be a drop down with edge in qtile !
 
 
 (defwidget weather-widget []
@@ -57,13 +57,27 @@
     :vexpand true
     :hexpand true
 
+    (overlay
+      :class "weather"
+      (label
+        :valign "center"
+        :justify "center"
+        :vexpand true
+        :hexpand true
+        :wrap true
+        :text "${weather-holder.name}, ${weather-holder.current_condition_text}"
+      )
+      (label
+            :justify "left"
+            :valign "end"
+            :warp true
+            :width 10
+            :vexpand true
+            :hexpand true
 
-    (label
-        :justify "left"
-        ; :valign "center"
-        ; :halign "center"
-        :text "${weather-holder.name} , ${weather-holder.current_condition_text} \\n${weather-holder.temperature}   ,   ${weather-holder.wind_speed} kph"
-        ; :markup "<span foreground='blue' size='x-large'>Blue text</span> is <i>cool</i>!"
+            :markup "<span foreground='#bf616a'></span> ${weather-holder.temperature} , <span foreground='#5e81ac'></span> ${weather-holder.wind_speed}"
+
+        )
     )
   )
 
@@ -84,23 +98,12 @@
         :orientation "horizontal"
         :vexpand true
         :hexpand true
-        ; :halign "fill"
 
-        ; :height 300
 
-        ; TODO: add image some else
-        ; (image
-        ;   :class "image"
-        ;   :image-width 600
-        ;   :image-height 320
-        ;   :path "./wallhaven-9d8mrx.png"
-        ;   :halign "fill"
-        ; )
 
         (weather-widget)
         (quote-widget
-          ; :height 300
-          ; :width 500
+
         )
 
       )
@@ -111,7 +114,7 @@
 )
 
 
-(defwindow today_information
+(defwindow today_info
     :monitor 0
     :wm-ignore true
     :stacking "fg"
@@ -126,12 +129,13 @@
 
 )
 
+
+
 (defpoll leetcode_info_holder
   :interval "3600s"
   'python -u ./scripts/get_leetcode_daily_problem.py'
 )
 
-; no one is perfect ! stop trying to do shits and be felxing!
 
 
 (defwindow leetcode_daily_problems
@@ -261,9 +265,7 @@
 
 
 
-
-
-(defwindow control_panel
+(defwindow sys_info
   :monitor 0
   :monitor 0
   :wm-ignore true
@@ -272,7 +274,7 @@
         :height "20%"
         :width "20%"
         :anchor "center left"
-
+        :x 10
 
     )
     (system_informations)
@@ -288,8 +290,8 @@
   :geometry (geometry
         :height "15%"
         :width "20%"
-        :anchor "bottom left"
-        :y -50
+        :anchor "center right"
+        :x -10
 
     )
   (box
@@ -310,10 +312,3 @@
     )
   )
 )
-
-
-
-
-
-
-;  TODO: add the style to the widgets
