@@ -1,6 +1,6 @@
 This is my collections of eww widgets.
 
-usage:  eww open ( corresponding window name ) 
+usage:  eww open ( sys_info , today_info , free_game , leetcode_daily_problems) 
 
 there is windows to retreive weather , calendar and the qoutes
 
