@@ -126,65 +126,6 @@
 
 )
 
-(defwindow powermenu
-    :monitor 0
-    :wm-ignore true
-    :stacking "fg"
-    :geometry (geometry
-      :height "30%" ; for the bar to be display
-      :width "4.3%"
-      :anchor "center right"
-    )
-
-    (box
-      :class "layout-box"
-
-      :orientation "vertical"
-
-      ; shutdown
-      (button
-        ;
-        :class "_button"
-        :onclick 'echo "shutdown"'
-        "󰐥"
-      )
-
-      ; logout
-      (button
-
-        :class "_button"
-        :onclick 'echo "log out"'
-        "󰍃"
-      )
-
-      ; restart
-      (button
-
-        :class "_button"
-        :onclick 'echo "restart"'
-        ""
-      )
-
-      ; lockscreen
-      (button
-
-        :class "_button"
-        :onclick 'echo "lockscreen"'
-        ""
-      )
-
-      ; sleep
-      (button
-
-        :class "_button"
-        :onclick 'echo "sleep"'
-        ""
-      )
-
-    )
-
-)
-
 (defpoll leetcode_info_holder
   :interval "3600s"
   'python -u ./scripts/get_leetcode_daily_problem.py'
