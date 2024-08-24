@@ -10,5 +10,5 @@ windows to retreive today leetcode challanger and current free games on epic sto
 
 # it is not fully developed so can't say much about it 
 
-![image](https://github.com/user-attachments/assets/cf6c3150-a3f3-43ed-bbe9-64a4d590ab55)
 
+![image](https://github.com/user-attachments/assets/1529b585-d516-4a01-9bfd-8e001a5090d7)
