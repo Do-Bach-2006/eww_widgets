@@ -9,3 +9,6 @@ windows to display the system informations
 windows to retreive today leetcode challanger and current free games on epic store . 
 
 # it is not fully developed so can't say much about it 
+
+![image](https://github.com/user-attachments/assets/cf6c3150-a3f3-43ed-bbe9-64a4d590ab55)
+
