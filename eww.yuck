@@ -1,7 +1,7 @@
 
 ; quote widget
 (defpoll quote_and_author
-  :interval "1800s"; the qoute will auto matically update after 30 mins
+  :interval "30m"; the qoute will auto matically update after 30 mins
   'python -u ./scripts/get_quotes.py'
 )
 
@@ -50,8 +50,6 @@
   'python -u "scripts/get_weather.py" '
 )
 
-; TODO: adding the widget to get free games from epic
-; TODO: the quick translate will be a drop down with edge in qtile !
 
 
 (defwidget weather-widget []
@@ -76,9 +74,9 @@
             :width 10
             :vexpand true
             :hexpand true
-            ; :halign "center"
+
             :markup "<span foreground='#bf616a'></span> ${weather-holder.temperature} , <span foreground='#5e81ac'></span> ${weather-holder.wind_speed}"
-            ; :markup "<span foreground='blue' size='x-large'>Blue text</span> is <i>cool</i>!"
+
         )
     )
   )
@@ -100,18 +98,8 @@
         :orientation "horizontal"
         :vexpand true
         :hexpand true
-        ; :halign "fill"
 
-        ; :height 300
 
-        ; TODO: add image some else
-        ; (image
-        ;   :class "image"
-        ;   :image-width 600
-        ;   :image-height 320
-        ;   :path "./wallhaven-9d8mrx.png"
-        ;   :halign "fill"
-        ; )
 
         (weather-widget)
         (quote-widget
@@ -148,7 +136,6 @@
   'python -u ./scripts/get_leetcode_daily_problem.py'
 )
 
-; no one is perfect ! stop trying to do shits and be felxing!
 
 
 (defwindow leetcode_daily_problems
@@ -204,7 +191,7 @@
         :class "_button"
         :hexpand true
         :height 10
-        :onclick 'firefox "${leetcode_info_holder.link}"'
+        :onclick 'firefox --new-tab "${leetcode_info_holder.link}" &'
         "open in browser"
 
       )
@@ -307,9 +294,10 @@
         :x -10
 
     )
-  (box
+  (centerbox
     :class "layout-box"
-    (overlay
+    :orientation "vertical"
+
       (label
         :class "heading"
         :valign "start"
@@ -322,13 +310,13 @@
         :wrap true
         :justify "center"
         :text {freegames})
-    )
+      (button
+          :valign "end"
+          :class "_button"
+          :onclick 'firefox --new-tab https://store.epicgames.com/en-US/ &'
+          "open in browser"
+        )
+
+
   )
 )
-
-
-
-
-
-
-;  TODO: add the style to the widgets
